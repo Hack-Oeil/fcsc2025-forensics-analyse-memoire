@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="fr">
+    <meta charset="UTF-8">
+    <!--Page Title-->
+    <title>Hack-Oeil - Les CTFs de Cyrhades</title>
+    <!--Meta Keywords and Description-->
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+    <link rel="shortcut icon" href="./assets/images/favicon.ico" title="Favicon" />
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="./assets/css/github.min.css">
+    <script src="./assets/js/highlight.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Vérifie si la fenêtre est dans une iframe
+            if (window.self !== window.top) {
+                document.querySelectorAll('a').forEach((link) => {
+                    link.addEventListener('click', (event) => {
+                        const a = event.target.closest('a[href^="http"]');
+                        if (a) {
+                            event.preventDefault();
+                            window.parent.postMessage({
+                                type: "open-external",
+                                url: a.href
+                            }, "*");
+                        }
+                    });
+                });
+            }
+            // Active la coloration syntaxique :
+            if (window.hljs) {
+                hljs.highlightAll();
+            } else {
+                console.error("Highlight.js non chargé !");
+            }
+        });
+    </script>
+</head>
+
+<body>
+
+    <div id="wrapper">
+        <!--Main Content Area-->
+        <main id="content">
+            <!--Ctf-->
+            <section class="ctf scrollto">
+                <article class="row clearfix">
+                    <div class="col-1">
+                        <div class="section-heading">
+                            <h3>Challenge #496</h3>
+                            <h2 class="section-title">Analyse mémoire - Pour commencer (1/2)</h2>
+                            <p>
+                                Vous vous préparez à analyser une capture mémoire et vous notez quelques informations
+                                sur la machine avant de plonger dans l’analyse :<br />
+
+                                - nom d’utilisateur,<br />
+                                - nom de la machine,<br />
+                                - adresse IPv4, non locale, de la machine.<br /><br />
+
+                                Le flag est au format
+                                <code>FCSC{&lt;nom d'utilisateur>:&lt;nom de la machine>:&lt;adresse IPv4>}</code>
+                                où :<br />
+
+                                - <code>&lt;nom d'utilisateur></code> est le nom de l’utilisateur qui utilise la
+                                machine,<br />
+                                - <code>&lt;nom de la machine></code> est le nom de la machine analysée et<br />
+                                - <code>&lt;adresse IPv4></code> est l’adresse IPv4, non locale, de la
+                                machine.<br /><br />
+
+                                Par exemple :
+                                <code>FCSC{Arthur:Ordinateur-de-rct:192.168.1.150}</code>.
+
+                                Vous trouverez la suite de cette épreuve : <a target="_blank"
+                                    href="https://ctfs.cyrhades.fr/starting/ctf/496">Analyse mémoire -
+                                    Pour commencer (2/2)</a>.
+                            </p>
+                            <h4>Fichier à étudier</h4>
+                            <p>
+                                - analyse-memoire.tar.xz
+                            </p>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="row clearfix">
+                    <div class="col-1">
+                        <div class="section-heading">
+                            <h3>FCSC 2025</h3>
+                            <h2 class="section-title">Hackropole</h2>
+                            <p class="section-subtitle">
+                                Lien officiel :
+                                <a target="_blank"
+                                    href="https://hackropole.fr/fr/challenges/forensics/fcsc2025-forensics-analyse-memoire-1/">FCSC
+                                    2025 -
+                                    Analyse mémoire - Pour commencer (1/2)
+                                </a>
+                                <br />
+                                Auteur: haxom
+                        </div>
+                    </div>
+                </article>
+
+                <article class="row clearfix">
+                    <div class="col-1">
+                        <div class="section-heading">
+                            <h3>Apprentissage</h3>
+                            <h2 class="section-title">Documentations et Vidéos</h2>
+                            <p class="section-subtitle">
+                                Aucune documentation pour le moment
+                            </p>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="row clearfix">
+                    <div class="col-1">
+                        <div class="section-heading">
+                            <h3>Aide</h3>
+                            <h2 class="section-title">Conseils et indices</h2>
+                            <p class="section-subtitle">
+                                <a target="_blank"
+                                    href="https://discord.com/channels/1175764392307077120/1175764601716092948">Fil sur
+                                    le Discord</a>
+                            </p>
+                        </div>
+                    </div>
+                </article>
+            </section>
+            <!--End of Ctf-->
+        </main>
+        <!--End Main Content Area-->
+
+        <a id="scrollUp" href="#wrapper" style="position: fixed; z-index: 1000;"
+            aria-label="Remonter en haut de la page" title="Remonter en tête de site"></a>
+    </div>
+</body>
+
+</html>

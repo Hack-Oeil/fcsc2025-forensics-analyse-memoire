@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="fr">
+    <meta charset="UTF-8">
+    <!--Page Title-->
+    <title>Hack-Oeil - Les CTFs de Cyrhades</title>
+    <!--Meta Keywords and Description-->
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+    <link rel="shortcut icon" href="./assets/images/favicon.ico" title="Favicon" />
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="./assets/css/github.min.css">
+    <script src="./assets/js/highlight.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Vérifie si la fenêtre est dans une iframe
+            if (window.self !== window.top) {
+                document.querySelectorAll('a').forEach((link) => {
+                    link.addEventListener('click', (event) => {
+                        const a = event.target.closest('a[href^="http"]');
+                        if (a) {
+                            event.preventDefault();
+                            window.parent.postMessage({
+                                type: "open-external",
+                                url: a.href
+                            }, "*");
+                        }
+                    });
+                });
+            }
+            // Active la coloration syntaxique :
+            if (window.hljs) {
+                hljs.highlightAll();
+            } else {
+                console.error("Highlight.js non chargé !");
+            }
+        });
+    </script>
+</head>
+
+<body>
+
+    <div id="wrapper">
+        <!--Main Content Area-->
+        <main id="content">
+            <!--Ctf-->
+            <section class="ctf scrollto">
+                <article class="row clearfix">
+                    <div class="col-1">
+                        <div class="section-heading">
+                            <h3>Challenge #513</h3>
+                            <h2 class="section-title">Analyse mémoire 1/5 - Exfiltration</h2>
+                            <p>
+                                Un agent du FCSC démarre son ordinateur pour réfléchir et noter des idées de challenges
+                                pour l’année prochaine. Il nous a cependant alerté que lors du démarrage, un étrange
+                                écran rouge est apparu à peine une seconde, puis le poste a démarré normalement.
+                                <br /><br />
+                                Il a pu commencé son travail sans souci, mais afin de s’assurer que le problème ne
+                                vienne pas d’un potentiel malware, nous lui avons fait capturer la mémoire du poste avec
+                                l’outil DumpIt. Analysez la mémoire et retrouvez le malware qui tente d’exfiltrer le
+                                document :
+                                <br /><br />
+                                - le processus exécutant le malware<br />
+                                - l’adresse et le port du serveur contrôlé par l’attaquant<br />
+                                Le flag est au format
+                                <code>FCSC{&lt;process_name>:&lt;process_id>:&lt;adresse_ip_distante>:
+                                &lt;port_distant>:&lt;protocole utilisé>}</code> où :
+                                <br /><br />
+                                - <code>&lt;process_name></code> est le nom du processus exécutant le
+                                malware,<br />
+                                - <code>&lt;process_id></code> est le numéro du processus (PID) exécutant
+                                le malware,<br />
+                                - <code>&lt;adresse_ip_distante></code> est l’adresse IP du serveur
+                                controlé par l’attaquant,<br />
+                                - <code>&lt;port_distant></code> est le port utilisé sur le
+                                serveur controlé par l’attaquant et<br />
+                                - <code>&lt;protocole utilisé></code> est le protocole utilisé
+                                pour la communication avec le serveur de
+                                l’attaquant (<code>TCP</code> ou <code>UDP</code>).
+                                <br /><br />
+
+                                Par exemple :
+                                <code>FCSC{malware.exe:512:51.255.68.182:21:UDP}</code>.
+
+                                Cette épreuve fait partie d’une série à faire
+                                dans l’ordre :<br />
+                                - <strong>Analyse mémoire 1/5 -
+                                    Exfiltration</strong><br />
+                                - <a target="_blank" href="https://ctfs.cyrhades.fr/starting/ctf/513">Analyse
+                                    mémoire
+                                    2/5 - Origine de la menace</a>.<br />
+                                - <a target="_blank" href="https://ctfs.cyrhades.fr/starting/ctf/">Analyse
+                                    mémoire 3/5 -
+                                    Où est le pansement ?</a>.<br />
+                                - <a target="_blank" href="https://ctfs.cyrhades.fr/starting/ctf/">Analyse
+                                    mémoire 4/5 -
+                                    Un échelon de plus dans la chaîne</a>.<br />
+                                - <a target="_blank" href="https://ctfs.cyrhades.fr/starting/ctf/">Analyse
+                                    mémoire 5/5 -
+                                    Le commencement</a>.<br />
+                            </p>
+                            <h4>Fichier à étudier</h4>
+                            <p>
+                                - analyse-memoire.tar.xz
+                            </p>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="row clearfix">
+                    <div class="col-1">
+                        <div class="section-heading">
+                            <h3>FCSC 2025</h3>
+                            <h2 class="section-title">Hackropole</h2>
+                            <p class="section-subtitle">
+                                Lien officiel :
+                                <a target="_blank"
+                                    href="https://hackropole.fr/fr/challenges/forensics/fcsc2025-forensics-analyse-memoire-3/">FCSC
+                                    2025 -
+                                    Analyse mémoire 1/5 - Exfiltration
+                                </a>
+                                <br />
+                                Auteur: haxom
+                        </div>
+                    </div>
+                </article>
+
+                <article class="row clearfix">
+                    <div class="col-1">
+                        <div class="section-heading">
+                            <h3>Apprentissage</h3>
+                            <h2 class="section-title">Documentations et Vidéos</h2>
+                            <p class="section-subtitle">
+                                Aucune documentation pour le moment
+                            </p>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="row clearfix">
+                    <div class="col-1">
+                        <div class="section-heading">
+                            <h3>Aide</h3>
+                            <h2 class="section-title">Conseils et indices</h2>
+                            <p class="section-subtitle">
+                                <a target="_blank"
+                                    href="https://discord.com/channels/1175764392307077120/1175764601716092948">Fil sur
+                                    le Discord</a>
+                            </p>
+                        </div>
+                    </div>
+                </article>
+            </section>
+            <!--End of Ctf-->
+        </main>
+        <!--End Main Content Area-->
+
+        <a id="scrollUp" href="#wrapper" style="position: fixed; z-index: 1000;"
+            aria-label="Remonter en haut de la page" title="Remonter en tête de site"></a>
+    </div>
+</body>
+
+</html>

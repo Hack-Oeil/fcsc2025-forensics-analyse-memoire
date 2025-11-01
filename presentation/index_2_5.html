@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="fr">
+    <meta charset="UTF-8">
+    <!--Page Title-->
+    <title>Hack-Oeil - Les CTFs de Cyrhades</title>
+    <!--Meta Keywords and Description-->
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+    <link rel="shortcut icon" href="./assets/images/favicon.ico" title="Favicon" />
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="./assets/css/github.min.css">
+    <script src="./assets/js/highlight.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Vérifie si la fenêtre est dans une iframe
+            if (window.self !== window.top) {
+                document.querySelectorAll('a').forEach((link) => {
+                    link.addEventListener('click', (event) => {
+                        const a = event.target.closest('a[href^="http"]');
+                        if (a) {
+                            event.preventDefault();
+                            window.parent.postMessage({
+                                type: "open-external",
+                                url: a.href
+                            }, "*");
+                        }
+                    });
+                });
+            }
+            // Active la coloration syntaxique :
+            if (window.hljs) {
+                hljs.highlightAll();
+            } else {
+                console.error("Highlight.js non chargé !");
+            }
+        });
+    </script>
+</head>
+
+<body>
+
+    <div id="wrapper">
+        <!--Main Content Area-->
+        <main id="content">
+            <!--Ctf-->
+            <section class="ctf scrollto">
+                <article class="row clearfix">
+                    <div class="col-1">
+                        <div class="section-heading">
+                            <h3>Challenge #514</h3>
+                            <h2 class="section-title">Analyse mémoire 2/5 - Origine de la menace</h2>
+                            <p>
+                                Il y a bien un malware actif sur la machine. Nous aimerions comprendre comment
+                                l’attaquant a pu l’exécuter en mémoire. Retrouvez le processus qui a permis d’exécuter
+                                ce malware.
+
+                                Le flag est au format <code>FCSC{<process_name>:<process_id>}</code> où :
+
+                                - <code>&lt;process_name></code> est le nom du processus à l’orginie de l’exécution du
+                                malware et
+                                -<code>&lt;process_id></code> est le numéro du processus (PID) à l’orginie de
+                                l’exécution du malwarel.
+                                <br /><br />
+                                Par exemple :
+                                <code>FCSC{malware.exe:42}</code>.<br />
+
+                                Cette épreuve fait partie d’une série à faire
+                                dans l’ordre :<br />
+                                -
+                                - <a target="_blank" href="https://ctfs.cyrhades.fr/starting/ctf/513">Analyse
+                                    mémoire 1/5 -
+                                    Exfiltration</a>.<br />
+                                - <strong>Analyse
+                                    mémoire
+                                    2/5 - Origine de la menace</strong>.<br />
+                                - <a target="_blank" href="https://ctfs.cyrhades.fr/starting/ctf/">Analyse
+                                    mémoire 3/5 -
+                                    Où est le pansement ?</a>.<br />
+                                - <a target="_blank" href="https://ctfs.cyrhades.fr/starting/ctf/">Analyse
+                                    mémoire 4/5 -
+                                    Un échelon de plus dans la chaîne</a>.<br />
+                                - <a target="_blank" href="https://ctfs.cyrhades.fr/starting/ctf/">Analyse
+                                    mémoire 5/5 -
+                                    Le commencement</a>.<br />
+                            </p>
+                            <h4>Fichier à étudier</h4>
+                            <p>
+                                - analyse-memoire.tar.xz
+                            </p>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="row clearfix">
+                    <div class="col-1">
+                        <div class="section-heading">
+                            <h3>FCSC 2025</h3>
+                            <h2 class="section-title">Hackropole</h2>
+                            <p class="section-subtitle">
+                                Lien officiel :
+                                <a target="_blank"
+                                    href="https://hackropole.fr/fr/challenges/forensics/fcsc2025-forensics-analyse-memoire-4/">FCSC
+                                    2025 -
+                                    Analyse mémoire 2/5 - Origine de la menace
+                                </a>
+                                <br />
+                                Auteur: haxom
+                        </div>
+                    </div>
+                </article>
+
+                <article class="row clearfix">
+                    <div class="col-1">
+                        <div class="section-heading">
+                            <h3>Apprentissage</h3>
+                            <h2 class="section-title">Documentations et Vidéos</h2>
+                            <p class="section-subtitle">
+                                Aucune documentation pour le moment
+                            </p>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="row clearfix">
+                    <div class="col-1">
+                        <div class="section-heading">
+                            <h3>Aide</h3>
+                            <h2 class="section-title">Conseils et indices</h2>
+                            <p class="section-subtitle">
+                                <a target="_blank"
+                                    href="https://discord.com/channels/1175764392307077120/1175764601716092948">Fil sur
+                                    le Discord</a>
+                            </p>
+                        </div>
+                    </div>
+                </article>
+            </section>
+            <!--End of Ctf-->
+        </main>
+        <!--End Main Content Area-->
+
+        <a id="scrollUp" href="#wrapper" style="position: fixed; z-index: 1000;"
+            aria-label="Remonter en haut de la page" title="Remonter en tête de site"></a>
+    </div>
+</body>
+
+</html>

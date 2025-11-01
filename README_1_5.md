@@ -15,7 +15,7 @@ Le flag est au format ```FCSC{<process_name>:<process_id>:<adresse_ip_distante>:
 - ```<protocole utilisé>``` est le protocole utilisé pour la communication avec le serveur de l’attaquant (```TCP``` ou ```UDP```).
 
 
-Par exemple :``` FCSC{malware.exe:512:51.255.68.182:21:UDP}```.
+Par exemple :```FCSC{malware.exe:512:51.255.68.182:21:UDP}```.
 
 
 Cette épreuve fait partie d’une série à faire dans l’ordre :
